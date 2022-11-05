@@ -7,10 +7,13 @@ public class DoctorScript : MonoBehaviour
     [SerializeField] float _moveSpeed = 1.0f; //speed of the doctor
     [SerializeField] List<Color> _randomColors;
     [SerializeField] GameObject _startPoint;
+    [SerializeField] GameObject _hatObj;
+
+    [SerializeField] GameObject _shoeObj;
     // Start is called before the first frame update
     void Start()
     {
-
+        RandomDoctorColour();
     }
 
     // Update is called once per frame
@@ -28,7 +31,9 @@ public class DoctorScript : MonoBehaviour
     }
     void RandomDoctorColour()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().color = _randomColors[Random.Range(0, _randomColors.Count)];
+        _shoeObj.GetComponent<SpriteRenderer>().color = _randomColors[Random.Range(0, _randomColors.Count)];
+        _hatObj.GetComponent<SpriteRenderer>().color = _randomColors[Random.Range(0, _randomColors.Count)];
+
         this.gameObject.transform.localPosition = _startPoint.transform.position;
     }
 }
