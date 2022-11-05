@@ -8,6 +8,7 @@ public class PatientSicknessScript : MonoBehaviour
     List<Color> _hatColors;
     List<Color> _shoeColors;
     [SerializeField] DoctorScript _doctorScript;
+    [SerializeField] GameOverScript GameEnd;
 
     [SerializeField] GameObject _sicknessShoe;
     [SerializeField] GameObject _sicknessHat;
@@ -27,7 +28,7 @@ public class PatientSicknessScript : MonoBehaviour
 
     }
 
-    void RandomSickness()
+    public void RandomSickness()
     {
         _sicknessShoe.GetComponent<SpriteRenderer>().color = _shoeColors[Random.Range(0, _shoeColors.Count)];
         _sicknessHat.GetComponent<SpriteRenderer>().color = _hatColors[Random.Range(0, _hatColors.Count)];
@@ -47,6 +48,7 @@ public class PatientSicknessScript : MonoBehaviour
             _WinnerText.gameObject.SetActive(true);
         }else{
             Debug.Log("you lose");
+            GameEnd.showGameOver();
         }
     }
 }

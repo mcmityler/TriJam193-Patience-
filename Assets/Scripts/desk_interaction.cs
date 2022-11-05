@@ -9,6 +9,7 @@ public class desk_interaction : MonoBehaviour
     [SerializeField]PatientSicknessScript patitientsicknessScript; 
     void OnTriggerEnter2D(Collider2D col)
     {
+
         if (col.gameObject.tag == "Player")
         {
             serviceDesk = true;

@@ -31,7 +31,7 @@ public class DoctorScript : MonoBehaviour
             RandomDoctorColour();
         }
     }
-    void RandomDoctorColour()
+    public void RandomDoctorColour()
     {
         _hatObj.GetComponent<SpriteRenderer>().color = _randomHatColors[Random.Range(0, _randomHatColors.Count)];
         _shoeObj.GetComponent<SpriteRenderer>().color = _randomShoeColors[Random.Range(0, _randomShoeColors.Count)];
