@@ -38,5 +38,20 @@ public class DoctorScript : MonoBehaviour
 
         this.gameObject.transform.localPosition = _startPoint.transform.position;
     }
+    public Color GetCurrentHatColor(){
+        return _hatObj.GetComponent<SpriteRenderer>().color;
+
+    }
+    public Color GetCurrentShoeColor(){
+        return _shoeObj.GetComponent<SpriteRenderer>().color;
+
+    }
+    public List<Color> GetAllHatColors(){
+        return _randomHatColors;
+
+    }
+    public List<Color> GetAllShoeColors(){
+        return _randomShoeColors;
+    }
 }
 
