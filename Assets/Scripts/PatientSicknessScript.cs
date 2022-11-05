@@ -8,12 +8,14 @@ public class PatientSicknessScript : MonoBehaviour
     List<Color> _hatColors;
     List<Color> _shoeColors;
     [SerializeField] DoctorScript _doctorScript;
+    [SerializeField] DoctorScript _doctorScript2;
+
     [SerializeField] GameOverScript GameEnd;
 
     [SerializeField] GameObject _sicknessShoe;
     [SerializeField] GameObject _sicknessHat;
     [SerializeField] TMP_Text _WinnerText;
-    [SerializeField] PointScript getpoints; 
+    [SerializeField] PointScript getpoints;
 
     // Start is called before the first frame update
     void Start()
@@ -35,20 +37,30 @@ public class PatientSicknessScript : MonoBehaviour
         _sicknessHat.GetComponent<SpriteRenderer>().color = _hatColors[Random.Range(0, _hatColors.Count)];
 
     }
-
+    public Color GetSicknessHat()
+    {
+        return _sicknessHat.GetComponent<SpriteRenderer>().color;
+    }
+    public Color GetSicknessShoes()
+    {
+        return _sicknessShoe.GetComponent<SpriteRenderer>().color;
+    }
     public void CheckCombo()
     {
         Debug.Log(_sicknessShoe.GetComponent<SpriteRenderer>().color);
         Debug.Log(_doctorScript.GetCurrentHatColor());
 
 
-        if (_sicknessShoe.GetComponent<SpriteRenderer>().color == _doctorScript.GetCurrentShoeColor() &&
-                _sicknessHat.GetComponent<SpriteRenderer>().color == _doctorScript.GetCurrentHatColor())
+        if ((_sicknessShoe.GetComponent<SpriteRenderer>().color == _doctorScript.GetCurrentShoeColor() &&
+                _sicknessHat.GetComponent<SpriteRenderer>().color == _doctorScript.GetCurrentHatColor() ) ||(_sicknessShoe.GetComponent<SpriteRenderer>().color == _doctorScript2.GetCurrentShoeColor() &&
+                _sicknessHat.GetComponent<SpriteRenderer>().color == _doctorScript2.GetCurrentHatColor() )) 
         {
             Debug.Log("Winner!!!");
             _WinnerText.gameObject.SetActive(true);
             getpoints.addpoint();
-        }else{
+        }
+        else
+        {
             Debug.Log("Life was lost");
             GameEnd.RemoveLife();
         }
