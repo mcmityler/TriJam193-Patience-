@@ -13,6 +13,7 @@ public class PatientSicknessScript : MonoBehaviour
     [SerializeField] GameObject _sicknessShoe;
     [SerializeField] GameObject _sicknessHat;
     [SerializeField] TMP_Text _WinnerText;
+    [SerializeField] PointScript getpoints; 
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class PatientSicknessScript : MonoBehaviour
         {
             Debug.Log("Winner!!!");
             _WinnerText.gameObject.SetActive(true);
+            getpoints.addpoint();
         }else{
             Debug.Log("you lose");
             GameEnd.showGameOver();

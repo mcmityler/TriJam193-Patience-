@@ -25,4 +25,12 @@ public class GameOverScript : MonoBehaviour
         winReset.SetActive(false);
         
     }    
+    public void pointRestart(){
+        gameOverObj.SetActive(false);
+        playerone.transform.position = startPosition.transform.position;
+        DoctorScripty.RandomDoctorColour();
+        PatientlySick.RandomSickness();
+        winReset.SetActive(false);
+        
+    }    
 }

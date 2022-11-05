@@ -7,6 +7,8 @@ public class desk_interaction : MonoBehaviour
     bool serviceDesk = false;
 
     [SerializeField]PatientSicknessScript patitientsicknessScript; 
+   
+    
     void OnTriggerEnter2D(Collider2D col)
     {
 
@@ -14,7 +16,6 @@ public class desk_interaction : MonoBehaviour
         {
             serviceDesk = true;
         }
-
 
     }
 
