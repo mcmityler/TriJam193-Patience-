@@ -5,7 +5,9 @@ using UnityEngine;
 public class DoctorScript : MonoBehaviour
 {
     [SerializeField] float _moveSpeed = 1.0f; //speed of the doctor
-    [SerializeField] List<Color> _randomColors;
+    [SerializeField] List<Color> _randomHatColors;
+    [SerializeField] List<Color> _randomShoeColors;
+
     [SerializeField] GameObject _startPoint;
     [SerializeField] GameObject _hatObj;
 
@@ -31,9 +33,10 @@ public class DoctorScript : MonoBehaviour
     }
     void RandomDoctorColour()
     {
-        _shoeObj.GetComponent<SpriteRenderer>().color = _randomColors[Random.Range(0, _randomColors.Count)];
-        _hatObj.GetComponent<SpriteRenderer>().color = _randomColors[Random.Range(0, _randomColors.Count)];
+        _hatObj.GetComponent<SpriteRenderer>().color = _randomHatColors[Random.Range(0, _randomHatColors.Count)];
+        _shoeObj.GetComponent<SpriteRenderer>().color = _randomShoeColors[Random.Range(0, _randomShoeColors.Count)];
 
         this.gameObject.transform.localPosition = _startPoint.transform.position;
     }
 }
+
