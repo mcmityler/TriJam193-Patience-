@@ -36,10 +36,17 @@ public class PatientSicknessScript : MonoBehaviour
 
     public void CheckCombo()
     {
-        if (_sicknessShoe.GetComponent<SpriteRenderer>().color == _doctorScript.GetCurrentHatColor() &&
-                _sicknessHat.GetComponent<SpriteRenderer>().color == _doctorScript.GetCurrentShoeColor())
+        Debug.Log(_sicknessShoe.GetComponent<SpriteRenderer>().color);
+        Debug.Log(_doctorScript.GetCurrentHatColor());
+
+
+        if (_sicknessShoe.GetComponent<SpriteRenderer>().color == _doctorScript.GetCurrentShoeColor() &&
+                _sicknessHat.GetComponent<SpriteRenderer>().color == _doctorScript.GetCurrentHatColor())
         {
             Debug.Log("Winner!!!");
+            _WinnerText.gameObject.SetActive(true);
+        }else{
+            Debug.Log("you lose");
         }
     }
 }
