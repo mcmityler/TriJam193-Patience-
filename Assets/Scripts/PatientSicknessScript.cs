@@ -49,8 +49,8 @@ public class PatientSicknessScript : MonoBehaviour
             _WinnerText.gameObject.SetActive(true);
             getpoints.addpoint();
         }else{
-            Debug.Log("you lose");
-            GameEnd.showGameOver();
+            Debug.Log("Life was lost");
+            GameEnd.RemoveLife();
         }
     }
 }
