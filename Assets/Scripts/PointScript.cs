@@ -69,4 +69,3 @@ public class PointScript : MonoBehaviour
         _patientNametextbox.text = _patientNames[Random.Range(0,_patientNames.Count)];
     }
 }
-

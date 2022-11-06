@@ -26,7 +26,6 @@ public class DoctorScript : MonoBehaviour
     void Start()
     {
         _maxDoctors = Random.Range(10, 17);
-        RandomDoctorColour();
     }
 
     // Update is called once per frame

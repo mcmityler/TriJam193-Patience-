@@ -21,16 +21,28 @@ public class GameOverScript : MonoBehaviour
     [SerializeField] CameraShake _cameraShake;
     [SerializeField] DifficultyScript _difficultyScript;
     [SerializeField] PointScript _pointScript;
+    [SerializeField] Animator _titleAnimator;
+    [SerializeField] DoctorScript _doctor1;
+    [SerializeField] DoctorScript _doctor2;
+
+
+
     public void showGameOver()
     {
-_pointScript.DisplayNewhighscore();
+        _pointScript.DisplayNewhighscore();
         gameOverObj.SetActive(true);
-        Time.timeScale = 0;
+        _titleAnimator.ResetTrigger("TitleAway");
+
+        _titleAnimator.SetTrigger("TitleBack");
+
+        _doctor1.ChangeSpeed(0);
+        _doctor2.ChangeSpeed(0);
+
+
     }
     public void gameRestart()
     {
         gameOverObj.SetActive(false);
-        Time.timeScale = 1;
         playerone.transform.position = startPosition.transform.position;
         DoctorScripty1.RandomDoctorColour();
         DoctorScripty2.RandomDoctorColour();
@@ -40,7 +52,7 @@ _pointScript.DisplayNewhighscore();
         _lives = 3;
         _livesText.text = _lives.ToString();
         _cameraObject.transform.localPosition = Vector3.zero;
-        
+
         _difficultyScript.ResetDifficulty();
     }
     public void pointRestart()

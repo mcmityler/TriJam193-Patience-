@@ -14,7 +14,7 @@ public class MovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        _moveSpeed = 0;
     }
 
     // Update is called once per frame
@@ -57,5 +57,8 @@ public class MovementScript : MonoBehaviour
         this.gameObject.GetComponent<Transform>().transform.position += _moveDir * _moveSpeed * Time.deltaTime;
 
 
+    }
+    public void StartPlayer(){
+        _moveSpeed = 4;
     }
 }
