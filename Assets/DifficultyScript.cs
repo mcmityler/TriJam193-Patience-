@@ -42,17 +42,3 @@ public class DifficultyScript : MonoBehaviour
         _doctor2Active = false;
     }
 }
-
-
-
-
-//
-//  15 = try to make player lose;
-//  3 = increase speed; 
-//
-//
-//
-// 15  = 2 + _points/3
-//
-//
-//
